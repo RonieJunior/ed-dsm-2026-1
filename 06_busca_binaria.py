@@ -4,18 +4,28 @@ comps = None
 def busca_binaria(lista, val):
     """
     ALGORITMO DE BUSCA BINÁRIA
+<<<<<<< HEAD
     Dada uma lista, que DEVE ESTAR PREVIAMENTE ORDENADA, e um 
     valor de busca, divide á lista em duas partes iguais tanto 
     quanto possível, procurando pelo valor de busca apenas no 
     lado onde poderia estar. Novas subdivisões são feitas até 
     que se encontre o valor de busca ou que reste apenas uma 
     sublista  vazia, quando estão se conclui que o valor de 
+=======
+    Dada uma lista, que DEVE ESTAR PREVIAMENTE ORDENADA, e um
+    valor de busca, divide a lista em duas partes iguais tanto
+    quanto possível, procurando pelo valor de busca apenas no
+    lado onde poderia estar. Novas subdivisões são feitas até
+    que se encontre o valor de busca ou que reste apenas uma
+    sublista vazia, quando então se conclui que o valor de
+>>>>>>> 44574ab7b3e546fb7b400d3193920d38dd0b0215
     busca não consta da lista buscada.
     """
 
     global comps    # Usa a variável global dentro da função
     comps = 0
 
+<<<<<<< HEAD
     ini = 0                     # Posição inicial da lista
     fim = len(lista) -1           # Posição final da lista 
 
@@ -24,10 +34,21 @@ def busca_binaria(lista, val):
 
         # Calculando a posição do meio da lista
         # O operados // em Python significa divisão inteira
+=======
+    ini = 0                 # Posição inicial da lista
+    fim = len(lista) - 1    # Posição final da lista
+
+    while ini <= fim:
+        comps += 1
+
+        # Calculando a posição do meio da lista
+        # O operador // em Python significa divisão inteira
+>>>>>>> 44574ab7b3e546fb7b400d3193920d38dd0b0215
         # (descarta a parte fracionária, se houver)
         meio = (ini + fim) // 2
 
         # Verifica se o valor que está no meio da lista é
+<<<<<<< HEAD
         # igual ao valor de busca. Em caso afirmativo,
         # retornamos a posição do meio, pois o valor de busca
         # foi encontrada
@@ -43,6 +64,23 @@ def busca_binaria(lista, val):
 
         # Por fim, caso o valor de busca seja MAIOR do que aquele 
         # que está no meio da lista, move o ponteiro de inicio para 
+=======
+        # igual ao valor de busca. Em caso afirmativo, 
+        # retornamos a posição do meio, pois o valor de busca
+        # foi encontrado
+        if val == lista[meio]:
+            return meio
+        
+        # Senão, se o valor de busca é MENOR do que aquele que
+        # está no meio da lista, move o ponteiro do fim para
+        # a posição anterior à do meio e reinicia a busca na
+        # metade ESQUERDA da lista
+        elif val < lista[meio]:
+            fim = meio - 1
+
+        # Por fim, caso o valor de busca seja MAIOR do que aquele
+        # que está no meio da lista, move o ponteiro de início para
+>>>>>>> 44574ab7b3e546fb7b400d3193920d38dd0b0215
         # a posição seguinte à do meio e reinicia a busca na metade
         # DIREITA DA LISTA
         else:
@@ -53,12 +91,21 @@ def busca_binaria(lista, val):
     # na lista
     return -1
 
+<<<<<<< HEAD
 ###############################################################################
 
 # Teste com 1M+ de NOMES 
 
 import sys
 sys.dont_write_bytecode = True # Impede a criação do cache
+=======
+#############################################################################
+
+# TESTE COM 1M+ DE NOMES
+
+import sys
+sys.dont_write_bytecode = True  # Impede a criação do cache
+>>>>>>> 44574ab7b3e546fb7b400d3193920d38dd0b0215
 
 from time import time
 
@@ -76,9 +123,17 @@ for n in buscas:
     pos = busca_binaria(nomes, n)
     hora_fim = time()
     if pos >= 0:
+<<<<<<< HEAD
         print(f"Nome {n} encontrado na posição {pos}." )
     else:
         print(f"Nome {n} não encontrado, busca retornou {pos}")
     print(f"Numero de comparações: {comps}")
     print(f"Tempo gasto: {(hora_fim - hora_ini) * 1000}ms.\n")
     
+=======
+        print(f"Nome {n} encontrado na posição {pos}.")
+    else:
+        print(f"Nome {n} não encontrado, busca retornou {pos}.")
+    print(f"Número de comparações: {comps}")
+    print(f"Tempo gasto: {(hora_fim - hora_ini) * 1000}ms.\n")
+>>>>>>> 44574ab7b3e546fb7b400d3193920d38dd0b0215
