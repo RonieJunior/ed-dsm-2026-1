@@ -55,7 +55,7 @@ def busca_binaria(lista, val):
 
 #############################################################################
 
-# TESTE COM 1M+ DE NOMES
+# TESTE COM 1M+ DE NOMES.
 
 import sys
 sys.dont_write_bytecode = True  # Impede a criação do cache
